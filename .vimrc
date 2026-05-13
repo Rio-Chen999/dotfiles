@@ -23,6 +23,7 @@ endif
 " Enable syntax highlighting and smart indenting
 syntax on
 
+set showmatch
 filetype plugin indent on
 set autoindent
 set smartindent
@@ -32,7 +33,6 @@ set expandtab
 set softtabstop=4
 autocmd FileType javascript setlocal ts=2 sw=2 et
 autocmd FileType html setlocal ts=2 sw=2 et
-set showmatch
 
 set number
 set relativenumber
@@ -40,10 +40,14 @@ set cursorline
 set mat=2
 set showmatch
 set background=dark
-colorscheme desert
+colorscheme industry
 if has('gui_running')
     set guifont=Fira_Code:h12
 endif
+
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
+set autochdir
 " ==================================================
 
 " ==================================================
@@ -51,15 +55,21 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$']
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#wordcount#enabled = 1
 " ==================================================
 nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>a gg^vG$
 
 " Complete by Tab
@@ -78,9 +88,16 @@ nnoremap <leader>8 :8tabn<CR>
 nnoremap <leader>9 :9tabn<CR>
 nnoremap <leader>10 :10tabn<CR>
 nnoremap <leader>tt :tabnew<CR>
+nnoremap <leader>tc :tabclose<CR>
 
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
+nnoremap gbb :enew<CR>
+nnoremap gbn :bn<CR>
+nnoremap gbp :bp<CR>
+nnoremap gbd :bd<CR>
+
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>gf :GFiles<CR>
 
 if empty(glob('~/.vim'))
     silent !mkdir ~/.vim
@@ -106,3 +123,7 @@ set undofile
 nnoremap tm :tabnew<CR>:terminal<CR><C-\><C-n>:only<CR>i
 tnoremap <ESC> <C-\><C-n>
 tnoremap <ESC><ESC> <C-\><C-n>:q!<CR>
+
+nnoremap <F1> :source ~/.vimrc<CR>
+
+nnoremap <leader>qq :qa!<CR>
