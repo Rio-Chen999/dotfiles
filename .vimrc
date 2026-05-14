@@ -23,6 +23,10 @@ endif
 " Enable syntax highlighting and smart indenting
 syntax on
 
+" Share system clipboard
+" sudo apt install vim-gtk3 vim-runtime
+set clipboard=unnamedplus
+
 set showmatch
 filetype plugin indent on
 set autoindent
@@ -56,10 +60,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'     " gcc: toggle comments / uncomments
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'LunarWatcher/auto-pairs'
+Plug 'jlanzarotta/bufexplorer'  " buffer explorer: <leader>bt normal open | <leader>be toggle open/close | <leader>bs force horizontal split open | <leader>bv force vertical split open
+Plug 'junegunn/vim-peekaboo'
 call plug#end()
 
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -69,6 +76,7 @@ let NERDTreeIgnore=['\.git$']
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#wordcount#enabled = 1
+
 " ==================================================
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>a gg^vG$
@@ -92,12 +100,10 @@ nnoremap <leader>tt :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
 
 nnoremap gbb :enew<CR>
-nnoremap gbn :bn<CR>
-nnoremap gbp :bp<CR>
 nnoremap gbd :bd<CR>
 
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <C-f> :Files<CR>
+nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>gf :GFiles<CR>
 
 if empty(glob('~/.vim'))
@@ -125,6 +131,7 @@ nnoremap tm :tabnew<CR>:terminal<CR><C-\><C-n>:only<CR>i
 tnoremap <ESC> <C-\><C-n>
 tnoremap <ESC><ESC> <C-\><C-n>:q!<CR>
 
+nnoremap <leader>gv :e ~/.vimrc<CR>
 nnoremap <F1> :source ~/.vimrc<CR>
 
 nnoremap <leader>qq :qa!<CR>
