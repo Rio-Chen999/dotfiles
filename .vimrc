@@ -52,9 +52,14 @@ set hlsearch
 set ignorecase
 set smartcase
 colorscheme industry
-if has('gui_running')
-    set guifont=Fira_Code:h12
+if exists('g:GuiLoaded')
+    " GUI Vim
+    set guifont=FiraCode\ Nerd\ Font:h12
+else
+    " termimal Vim
+    set guifontwide=FiraCode\ Nerd\ Font:h12
 endif
+
 
 nnoremap <C-j> 10j
 nnoremap <C-k> 10k
