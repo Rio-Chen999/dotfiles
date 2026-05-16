@@ -5,6 +5,11 @@ let maplocalleader=" "
 set encoding=utf-8
 set fileformat=unix
 
+" Close bell
+set noerrorbells
+set visualbell
+set t_vb=
+
 " Enable colorful terminal support
 if &t_Co > 2 || has("gui_running")
     set termguicolors
@@ -17,7 +22,7 @@ if &term =~ "xterm"
     " REPLACE mode
     let &t_SR = "\<Esc>[3 q" . "\<Esc>]12;black\x7"
     " NORMAL mode
-    let &t_EI = "\<Esc>[2 q" . "\<Esc>]12;green\x7"
+    let &t_EI = "\<Esc>[2 q" . "\<Esc>]12;yellow\x7"
 endif
 
 " Enable syntax highlighting and smart indenting
@@ -40,10 +45,12 @@ autocmd FileType html setlocal ts=2 sw=2 et
 
 set number
 set relativenumber
-set cursorline
+set nocursorline
 set mat=2
 set showmatch
-set background=dark
+set hlsearch
+set ignorecase
+set smartcase
 colorscheme industry
 if has('gui_running')
     set guifont=Fira_Code:h12
