@@ -79,6 +79,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'LunarWatcher/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'  " buffer explorer: <leader>bt normal open | <leader>be toggle open/close | <leader>bs force horizontal split open | <leader>bv force vertical split open
 Plug 'junegunn/vim-peekaboo'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -111,8 +112,9 @@ nnoremap <leader>10 :10tabn<CR>
 nnoremap <leader>tt :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
 
-nnoremap gbb :enew<CR>
-nnoremap gbd :bd<CR>
+nnoremap <leader>bb :enew<CR>
+nnoremap <leader>bd :bd<CR>
+nnoremap <C-w> :bn<CR>
 
 nnoremap <C-f> :Files<CR>
 nnoremap <C-b> :Buffers<CR>
@@ -139,9 +141,12 @@ set directory=~/.vim/files/swap//
 set undodir=~/.vim/files/undo//
 set undofile
 
-nnoremap tm :tabnew<CR>:terminal<CR><C-\><C-n>:only<CR>i
+nnoremap <C-t> :FloatermToggle<CR>
+tnoremap <C-t> <C-\><C-n>:FloatermToggle<CR>
+tnoremap <C-j> <C-\><C-n>:FloatermNext<CR>
+tnoremap <C-k> <C-\><C-n>:FloatermKill<CR>
+tnoremap <C-l> <C-\><C-n>:FloatermNew<CR>
 tnoremap <ESC> <C-\><C-n>
-tnoremap <ESC><ESC> <C-\><C-n>:q!<CR>
 
 nnoremap <leader>gv :e ~/.vimrc<CR>
 nnoremap <F1> :source ~/.vimrc<CR>
