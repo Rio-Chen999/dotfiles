@@ -109,12 +109,13 @@ nnoremap <leader>7 :7tabn<CR>
 nnoremap <leader>8 :8tabn<CR>
 nnoremap <leader>9 :9tabn<CR>
 nnoremap <leader>10 :10tabn<CR>
+nnoremap <leader>tn :tabn<CR>
 nnoremap <leader>tt :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
 
 nnoremap <leader>bb :enew<CR>
 nnoremap <leader>bd :bd<CR>
-nnoremap <C-w> :bn<CR>
+nnoremap <S-Tab> :bn<CR>
 
 nnoremap <C-f> :Files<CR>
 nnoremap <C-b> :Buffers<CR>
