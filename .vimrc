@@ -80,6 +80,8 @@ Plug 'LunarWatcher/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'  " buffer explorer: <leader>bt normal open | <leader>be toggle open/close | <leader>bs force horizontal split open | <leader>bv force vertical split open
 Plug 'junegunn/vim-peekaboo'
 Plug 'voldikss/vim-floaterm'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -89,6 +91,9 @@ let NERDTreeIgnore=['\.git$']
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#wordcount#enabled = 1
+let g:UltiSnipsExpandTrigger = "<C-j>"
+let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 " ==================================================
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -135,6 +140,9 @@ if empty(glob('~/.vim/files/swap'))
 endif
 if empty(glob('~/.vim/files/undo'))
     silent !mkdir ~/.vim/files/undo
+endif
+if empty(glob('~/.vim/UltiSnips'))
+    silent !mkdir ~/.vim/UltiSnips
 endif
 
 set backupdir=~/.vim/files/backup//
