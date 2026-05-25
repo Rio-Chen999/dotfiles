@@ -154,7 +154,7 @@ nnoremap <C-t> :FloatermToggle<CR>
 tnoremap <C-t> <C-\><C-n>:FloatermToggle<CR>
 tnoremap <C-j> <C-\><C-n>:FloatermNext<CR>
 tnoremap <C-k> <C-\><C-n>:FloatermKill<CR>
-tnoremap <C-l> <C-\><C-n>:FloatermNew<CR>
+tnoremap <C-n> <C-\><C-n>:FloatermNew<CR>
 tnoremap <ESC> <C-\><C-n>
 
 nnoremap <leader>gv :e ~/.vimrc<CR>
