@@ -4,6 +4,12 @@ if (${1}) {
 }
 endsnippet
 
+snippet forin "for in loop" b
+for ${1:item} in ${2:iter} {
+  ${0}
+}
+endsnippet
+
 snippet csl "console.log" b
 console.log("${1}");
 endsnippet
@@ -20,4 +26,36 @@ snippet fn "function" b
 function ${1:fnname}(${2:args}) {
   ${0}
 }
+endsnippet
+
+snippet try "try-catch" b
+try {
+  ${1}
+} catch (e) {
+  ${2}
+}
+endsnippet
+
+snippet class "class" b
+class ${1:ClassName} {
+    constructor(${2:params}) {
+        ${3:// constructor body}
+    }
+
+    ${4:methodName}(${5:args}) {
+        ${6:// method body}
+    }
+}
+endsnippet
+
+snippet iife "IIFE" b
+(function(${1:args}) {
+    ${2:// code}
+}(${3:arguments}))
+endsnippet
+
+snippet promise "new Promise" b
+new Promise((resolve, reject) => {
+    ${1:// code}
+});
 endsnippet
