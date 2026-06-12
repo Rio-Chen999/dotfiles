@@ -40,7 +40,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
-autocmd FileType javascript setlocal ts=2 sw=2 et
 autocmd FileType html setlocal ts=2 sw=2 et
 
 set number
@@ -51,7 +50,7 @@ set showmatch
 set hlsearch
 set ignorecase
 set smartcase
-colorscheme industry
+colorscheme murphy
 if exists('g:GuiLoaded')
     " GUI Vim
     set guifont=FiraCode\ Nerd\ Font:h12
@@ -125,6 +124,11 @@ nnoremap <S-Tab> :bn<CR>
 nnoremap <C-f> :Files<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>gf :GFiles<CR>
+
+nnoremap <silent> gd <Plug><coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
 
 if empty(glob('~/.vim'))
     silent !mkdir ~/.vim
