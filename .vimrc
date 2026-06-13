@@ -15,16 +15,6 @@ if &t_Co > 2 || has("gui_running")
     set termguicolors
 endif
 
-" Set cursor to block without blink in normal, visual and commandline mode
-if &term =~ "xterm"
-    " INSERT mode
-    let &t_SI = "\<Esc>[6 q" . "\<Esc>]12;white\x7"
-    " REPLACE mode
-    let &t_SR = "\<Esc>[3 q" . "\<Esc>]12;black\x7"
-    " NORMAL mode
-    let &t_EI = "\<Esc>[2 q" . "\<Esc>]12;yellow\x7"
-endif
-
 " Enable syntax highlighting and smart indenting
 syntax on
 
@@ -59,16 +49,14 @@ else
     set guifontwide=FiraCode\ Nerd\ Font:h12
 endif
 
-
-nnoremap <C-j> 10j
-nnoremap <C-k> 10k
+nnoremap <leader>j 10j
+nnoremap <leader>k 10k
 set autochdir
 " ==================================================
 
 " ==================================================
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'     " gcc: toggle comments / uncomments
@@ -81,12 +69,9 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'voldikss/vim-floaterm'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'jreybert/vimagit'
 call plug#end()
 
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$']
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#wordcount#enabled = 1
@@ -95,8 +80,11 @@ let g:UltiSnipsJumpForwardTrigger = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 " ==================================================
-nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>a gg^vG$
+nnoremap ,, :Vex<CR>
+let g:netrw_browse_split = 4
+let g:netrw_liststyle = 1
+let g:netrw_winsize = 25
 
 " Complete by Tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
