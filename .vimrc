@@ -1,3 +1,5 @@
+" close splash
+set shortmess+=I
 " =================================================
 let mapleader=" "
 let maplocalleader=" "
@@ -91,16 +93,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
-nnoremap <leader>1 :1tabn<CR>
-nnoremap <leader>2 :2tabn<CR>
-nnoremap <leader>3 :3tabn<CR>
-nnoremap <leader>4 :4tabn<CR>
-nnoremap <leader>5 :5tabn<CR>
-nnoremap <leader>6 :6tabn<CR>
-nnoremap <leader>7 :7tabn<CR>
-nnoremap <leader>8 :8tabn<CR>
-nnoremap <leader>9 :9tabn<CR>
-nnoremap <leader>10 :10tabn<CR>
 nnoremap <leader>tn :tabn<CR>
 nnoremap <leader>tt :tabnew<CR>
 nnoremap <leader>tc :tabclose<CR>
@@ -142,8 +134,8 @@ set directory=~/.vim/files/swap//
 set undodir=~/.vim/files/undo//
 set undofile
 
-nnoremap <C-t> :FloatermToggle<CR>
-tnoremap <C-t> <C-\><C-n>:FloatermToggle<CR>
+nnoremap ;; :FloatermToggle<CR>
+tnoremap ;; <C-\><C-n>:FloatermToggle<CR>
 tnoremap <C-j> <C-\><C-n>:FloatermNext<CR>
 tnoremap <C-k> <C-\><C-n>:FloatermKill<CR>
 tnoremap <C-n> <C-\><C-n>:FloatermNew<CR>
