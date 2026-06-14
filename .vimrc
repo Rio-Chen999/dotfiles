@@ -82,7 +82,7 @@ let g:UltiSnipsJumpForwardTrigger = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 " ==================================================
-nnoremap <leader>a gg^vG$
+nnoremap <C-a> gg^vG$
 nnoremap ,, :Vex<CR>
 let g:netrw_browse_split = 4
 let g:netrw_liststyle = 1
@@ -134,8 +134,8 @@ set directory=~/.vim/files/swap//
 set undodir=~/.vim/files/undo//
 set undofile
 
-nnoremap ;; :FloatermToggle<CR>
-tnoremap ;; <C-\><C-n>:FloatermToggle<CR>
+nnoremap <C-t> :FloatermToggle<CR>
+tnoremap <C-t> <C-\><C-n>:FloatermToggle<CR>
 tnoremap <C-j> <C-\><C-n>:FloatermNext<CR>
 tnoremap <C-k> <C-\><C-n>:FloatermKill<CR>
 tnoremap <C-n> <C-\><C-n>:FloatermNew<CR>
