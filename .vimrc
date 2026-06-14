@@ -25,6 +25,7 @@ syntax on
 set clipboard=unnamedplus
 
 set showmatch
+set nocp
 filetype plugin indent on
 set autoindent
 set smartindent
@@ -87,6 +88,7 @@ nnoremap ,, :Vex<CR>
 let g:netrw_browse_split = 4
 let g:netrw_liststyle = 1
 let g:netrw_winsize = 25
+" let g:netrw_altv = 1
 
 " Complete by Tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
