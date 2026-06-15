@@ -52,21 +52,19 @@ else
     set guifontwide=FiraCode\ Nerd\ Font:h12
 endif
 
-nnoremap <leader>j 10j
-nnoremap <leader>k 10k
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
 set autochdir
 " ==================================================
 
 " ==================================================
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
-Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'     " gcc: toggle comments / uncomments
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'LunarWatcher/auto-pairs'
 Plug 'jlanzarotta/bufexplorer'  " buffer explorer: <leader>bt normal open | <leader>be toggle open/close | <leader>bs force horizontal split open | <leader>bv force vertical split open
 Plug 'junegunn/vim-peekaboo'
 Plug 'voldikss/vim-floaterm'
@@ -102,6 +100,7 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>bb :enew<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <S-Tab> :bn<CR>
+nnoremap <leader>co :only<CR>
 
 nnoremap <C-f> :Files<CR>
 nnoremap <C-b> :Buffers<CR>
