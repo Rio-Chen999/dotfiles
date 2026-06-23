@@ -71,6 +71,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jreybert/vimagit'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 let g:airline#extensions#tabline#buffer_nr_show = 1
