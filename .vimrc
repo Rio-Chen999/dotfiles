@@ -17,6 +17,16 @@ if &t_Co > 2 || has("gui_running")
     set termguicolors
 endif
 
+" Set cursor to block without blink in normal, visual and commandline mode
+if &term =~ "xterm"
+    " INSERT mode
+    let &t_SI = "\<Esc>[6 q" . "\<Esc>]12;white\x7"
+    " REPLACE mode
+    let &t_SR = "\<Esc>[3 q" . "\<Esc>]12;black\x7"
+    " NORMAL mode
+    let &t_EI = "\<Esc>[2 q" . "\<Esc>]12;green\x7"
+endif
+
 " Enable syntax highlighting and smart indenting
 syntax on
 
