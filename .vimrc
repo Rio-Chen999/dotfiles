@@ -114,7 +114,7 @@ nnoremap <silent> gy <Plug>(coc-type-definition)
 nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
 
-nnoremap <leader>m :MagitOnly<CR>
+nnoremap <leader>mg :MagitOnly<CR>
 
 if empty(glob('~/.vim'))
     silent !mkdir ~/.vim
