@@ -54,6 +54,8 @@ endif
 
 nnoremap <C-j> 10j
 nnoremap <C-k> 10k
+vnoremap <C-j> 10j
+vnoremap <C-k> 10k
 set autochdir
 " ==================================================
 
@@ -111,6 +113,8 @@ nnoremap <silent> gd <Plug><coc-definition)
 nnoremap <silent> gy <Plug>(coc-type-definition)
 nnoremap <silent> gi <Plug>(coc-implementation)
 nnoremap <silent> gr <Plug>(coc-references)
+
+nnoremap <leader>m :MagitOnly<CR>
 
 if empty(glob('~/.vim'))
     silent !mkdir ~/.vim
