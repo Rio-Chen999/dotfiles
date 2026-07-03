@@ -96,6 +96,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 " ==================================================
 nnoremap <C-a> gg^vG$
 nnoremap ,, :Vex<CR>
+nnoremap gU vawgU
+nnoremap gu vawgu
 let g:netrw_browse_split = 4
 let g:netrw_liststyle = 1
 let g:netrw_winsize = 25
@@ -116,7 +118,7 @@ nnoremap <S-Tab> :bn<CR>
 nnoremap <leader>co :only<CR>
 
 nnoremap <C-f> :Files<CR>
-nnoremap <C-b> :Buffers<CR>
+nnoremap <C-B> :Buffers<CR>
 nnoremap <leader>gf :GFiles<CR>
 
 nnoremap <silent> gd <Plug><coc-definition)
