@@ -23,7 +23,7 @@
 (load-theme 'wheatgrass t)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://mirrors.zju.edu.cn/elpa/melpa/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -33,14 +33,18 @@
   (package-refresh-contents)
   (package-install 'evil))
 
+(setq evil-want-keybinding nil)
 (require 'evil)
 (evil-mode 1)
+(require 'evil-collection)
+(evil-collection-init '(magit))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(magit evil cmake-mode)))
+ '(package-selected-packages
+   '(evil-collection typescript-mode rust-mode lsp-mode magit evil cmake-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -50,3 +54,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/elpa/compat")
 (require 'compat)
+
+(setq lsp-keymap-prefix "C-c l")
+
+(require 'lsp-mode)
+(add-hook 'rust-mode-hook #'lsp)
