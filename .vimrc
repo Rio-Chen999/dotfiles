@@ -7,6 +7,9 @@ let maplocalleader=" "
 set encoding=utf-8
 set fileformat=unix
 
+set guioptions-=T
+set guioptions-=m
+
 " Close bell
 set noerrorbells
 set visualbell
@@ -68,6 +71,9 @@ vnoremap <C-j> 10j
 vnoremap <C-k> 10k
 set autochdir
 " ==================================================
+
+" local plugin
+autocmd VimEnter * source ~/.vim/plugin/compile-mode.vim
 
 " ==================================================
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
