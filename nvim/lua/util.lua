@@ -3,7 +3,7 @@ local function reload_lua_files(dir)
 		return filename:match("%.lua$")
 	end
 
-	local directory_files = vim.fn.readdir("./lua", 1)
+	local directory_files = vim.fn.readdir(vim.fn.expand("~/.config/nvim/lua"), 1)
 	for _, file in ipairs(directory_files) do
 		if is_lua_file(file) then
 			local module_name = string.gsub(file, "%.%w+$", "")
@@ -17,7 +17,7 @@ local function reload_lua_files(dir)
 end
 
 vim.api.nvim_create_user_command('ReloadConfig', function()
-	reload_lua_files('./lua')
+	reload_lua_files()
 end, {})
 
 vim.keymap.set({'n'}, '<F1>', '<cmd>ReloadConfig<CR>', {noremap = true, silent = true})
