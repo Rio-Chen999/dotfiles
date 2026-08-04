@@ -1,5 +1,8 @@
 vim.pack.add({ 
-	{src = 'https://github.com/neovim/nvim-lspconfig'}
+	{src = 'https://github.com/neovim/nvim-lspconfig'},
+	{src = 'https://github.com/mg979/vim-visual-multi'},
+	{src = 'https://github.com/junegunn/vim-easy-align'},
+	{src = 'https://github.com/NeogitOrg/neogit'},
 })
 
 vim.lsp.config('rust-analyzer', {})
