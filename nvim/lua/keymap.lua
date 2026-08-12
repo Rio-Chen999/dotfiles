@@ -5,7 +5,7 @@ vim.keymap.set({'n', 'v'}, '<leader>jj', '<cmd>bnext<CR>', {noremap = true, sile
 vim.keymap.set({'n', 'v'}, '<leader>kk', '<cmd>bprev<CR>', {noremap = true, silent = true})
 vim.keymap.set({'n'}, '<leader>o', '<cmd>only<CR>', {noremap = true, silent = true})
 vim.keymap.set({'n'}, '<leader>d', '<cmd>bd<CR>', {noremap = true, silent = true})
-vim.keymap.set({'n'}, '<leader>n', '<cmd>enew<CR>', {noremap = true, silent = true})
+vim.keymap.set({'n'}, '<leader>bn', '<cmd>enew<CR>', {noremap = true, silent = true})
 vim.keymap.set({'n'}, '<leader>qq', '<cmd>qa!<CR>', {noremap = true, silent = true})
 vim.keymap.set({'n'}, '<C-a>', 'gg0vG$', {noremap = true, silent = true})
 vim.keymap.set({'n', 'i'}, '<C-s>', '<ESC><cmd>w<CR>', {noremap = true, silent = true})
